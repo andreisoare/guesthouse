@@ -1,0 +1,97 @@
+p {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.section-wrapper {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.app-header {
+	height: 65px;
+	min-width: 420px;
+
+	.logo {
+		padding-top: 6px;
+		float: left;
+	}
+
+	.controllers {
+		padding-top: 15px;
+		float: right;
+		font-size: 13px;
+		color: black;
+		a {
+			margin-left: 10px;
+			&:visited {
+				background-color: black;
+			}
+		}
+	}
+}
+
+
+.yellow-btn {
+	padding: 5px;
+	color: white;
+	background-color: #ECD203;
+	display: inline-block;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.search-box {
+	height: 280px;
+	max-width: 1440px;
+	margin: 0 auto;
+	background-image: url(../img/slideshow-1.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	text-align: center;
+	color: white;
+
+	.search-controllers {
+		max-width: 1300px;
+		margin: 0 auto;
+
+		.title {
+			font-size: 42px;
+			line-height: 50px;
+			padding-top: 50px;
+		}
+	
+		.subtitle {
+			font-size: 22px;
+			line-height: 26px;
+			padding-top: 10px;
+		}
+
+		.left-container {
+			float: left;
+			width: 10%;
+			padding-top: 115px;
+		}
+
+		.mid-container {
+			float: left;
+			width: 80%;
+		}
+
+		.right-container {
+			padding-top: 115px;
+			width: 10%;
+			float: right;
+		}
+	}
+}
+
+.clearboth {
+	clear: both;
+}
