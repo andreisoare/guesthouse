@@ -16,7 +16,7 @@ function Slideshow(selector) {
 		if (this.pictures_index > 0) {
 			this.pictures_index = this.pictures_index % this.pictures.length;
 		} else if (this.pictures_index < 0) {
-			this.pictures_index = 2;
+			this.pictures_index = this.pictures.length - 1;
 		}
 		this.setImage();
 	}
