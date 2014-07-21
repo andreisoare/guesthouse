@@ -1,4 +1,3 @@
-
 function Slideshow(selector) {
 	this.pictures = ["url(img/slideshow-1.png)", "url(img/slideshow-2.png)", "url(img/slideshow-3.png)"];
 	this.animation = null;
