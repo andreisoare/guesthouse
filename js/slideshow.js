@@ -8,14 +8,10 @@ function Slideshow(selector) {
 
 
 Slideshow.prototype.setImage = function() {
-
-  $(this.selector).css("background-image", this.pictures[this.pictures_index]);
-  /* Effects
-  var parent = this;
-	$(selector).fadeTo('slow', 0.3, function() {
-  		$(this).css("background-image", parent.pictures[parent.pictures_index]);
+  var _this = this;
+	$(this.selector).fadeTo('slow', 0.3, function() {
+  		$(this).css("background-image", _this.pictures[_this.pictures_index]);
 	}).fadeTo('slow', 1);
-  */
 };
 
 

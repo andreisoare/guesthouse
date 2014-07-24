@@ -5,56 +5,35 @@
 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js">></script>
 		<script type="text/javascript" src="js/slideshow.js"></script>
 		<script type="text/javascript" src="js/vendor/director.min.js"></script>
+		<script type="text/javascript" src="js/vendor/async.js"></script>
+		<script type="text/javascript" src="js/templates.js"></script>
+		<script type="text/javascript" src="js/HomeRoute.js"></script>
+		<script type="text/javascript" src="js/LoginRoute.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
 	</head>
 
 	<body>
 		<div class="app-header section-wrapper">
-			<img src="img/logo.png" class="logo">
+			<a href="/">
+				<img src="img/logo.png" class="logo">
+			</a>
 			<div class="controllers">
-				<a href="#login">LOGIN</a>
-				<a href="#signup">SIGNUP</a>
-				<a href="#list">
+				<a href="/login">LOGIN</a>
+				<a href="/signup">SIGNUP</a>
+				<a href="/list">
 					<div class="yellow-btn">List your place</div>
 				</a>
 			</div>
 		</div>
 
-		<div id="main-container">
-			<div class="search-box">
-				<div class="search-controllers">
-					<div class="left-container">
-						<a href="#">
-							<img src="img/arrow-left.png">
-						</a>
-					</div>
-					<div class="mid-container">
-							<p class="title">
-								Find a place to stay
-							</p>
-							<p class="subtitle">
-								Rent from people in over 34,000 cities and 190 countries
-							</p>
-					</div>				
-					<div class="right-container">
-						<a href="#">
-							<img src="img/arrow-right.png">
-						</a>
-					</div>
-					<div class="clearboth"></div>
-				</div>
-			</div>
+		<div id="content-outlet">
+			
 		</div>
 
 		<script type="text/javascript">
 			$(document).ready(function() {
-				var slideshow = new Slideshow('.search-box');
-				slideshow.startAnimation();
-				$('.left-container a').click(function() {
-					slideshow.advanceToLeft();
-				});
-				$('.right-container a').click(function() {
-					slideshow.advanceToRight();
-				});
+        App = new Application();
+        App.startRouter();
 			});
 		</script>
 	</body>
