@@ -1,9 +1,9 @@
-require('js/vendor/less.min');
 require('js/vendor/jquery.min');
 require('js/vendor/director.min');
 require('js/vendor/async');
+require('js/vendor/handlebars.runtime-v1.3.0');
 require('js/slideshow');
-require('js/templates');
+require('build/templates');
 require('js/routes/home');
 require('js/routes/login');
 require('js/application');

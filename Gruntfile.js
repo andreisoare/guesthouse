@@ -5,6 +5,17 @@ module.exports = function(grunt) {
 			maps: ["build/*.map"]
 		},
 
+		handlebars: {
+	    all: {
+        options: {
+          namespace: "Templates"
+        },
+        files: {
+          "build/templates.js": ["templates/**/*.hbs"]
+        }
+	    }
+		},
+
 		neuter: {
 			application: {
 				options: {
@@ -47,6 +58,10 @@ module.exports = function(grunt) {
       style: {
         files: ['css/**/*.css', 'css/**/*.less'],
         tasks: ['less:dev']
+      },
+      templates: {
+        files: ['templates/**/*.hbs'],
+        tasks: ['handlebars', 'neuter']
       }
     }
   });
@@ -56,9 +71,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-handlebars');
 
   if (grunt.option('target') === "dev") {
     grunt.registerTask('default', [
+      'handlebars',
       'neuter',
       'less:dev',
       'watch'
@@ -66,6 +83,7 @@ module.exports = function(grunt) {
   } else {
     grunt.registerTask('default', [
 			'clean:maps',
+      'handlebars',
       'neuter',
       'uglify',
       'less:prod',
