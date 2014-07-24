@@ -1,20 +1,14 @@
-function Application() {
-	this.templates = new Templates();
-}
+require('js/vendor/less.min');
+require('js/vendor/jquery.min');
+require('js/vendor/director.min');
+require('js/vendor/async');
+require('js/slideshow');
+require('js/templates');
+require('js/routes/home');
+require('js/routes/login');
+require('js/application');
 
-Application.prototype.startRouter = function() {
-	this.homeRoute = new HomeRoute([['templates/home.hbs', 'home']]);
-	this.loginRoute = new LoginRoute([['templates/login.hbs', 'login']]);
-	
-	var _this = this;
-
-	this.routes = {
-		'/login': function() { _this.loginRoute.load(); },
-		'/' : function() { _this.homeRoute.load(); }
-	};
-
-	this.router = Router(this.routes).configure({html5history: true});
-
-	this.router.init();
-
-};
+$(document).ready(function() {
+	App = new Application();
+	App.startRouter();
+});
