@@ -1,4 +1,8 @@
 var LoginRoute = window.LoginRoute = function() {
+  /* TODO: Why can't I rename load and exit to on and after? */
+  var _this = this;
+  this.on = function() { _this.load(); };
+  this.after = function() { _this.exit(); };
 };
 
 LoginRoute.prototype.getData = function(done) {
@@ -21,4 +25,7 @@ LoginRoute.prototype.load = function() {
     _this.render();
     _this.setEvents();
   });
+};
+
+LoginRoute.prototype.exit = function() {
 };

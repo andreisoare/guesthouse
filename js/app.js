@@ -8,7 +8,6 @@ require('js/routes/home');
 require('js/routes/login');
 require('js/application');
 
-$(document).ready(function() {
-	App = new Application();
-	App.startRouter();
+$(function() {
+	window.App = new Application();
 });
