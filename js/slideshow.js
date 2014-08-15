@@ -9,7 +9,7 @@ var Slideshow = window.Slideshow = function(selector, pictures) {
 Slideshow.prototype.setImage = function() {
   var _this = this;
   $(this.selector).fadeTo('slow', 0.3, function() {
-  		$(this).css("background-image", _this.pictures[_this.pictures_index]);
+    $(this).css("background-image", _this.pictures[_this.pictures_index]);
   }).fadeTo('slow', 1);
 };
 

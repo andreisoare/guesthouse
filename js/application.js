@@ -1,13 +1,15 @@
 var Application = window.Application = function() {
   this._createRouter();
   this._initializePushState();
+  this._initAuthentication();
 };
 
 
 Application.prototype._createRouter = function() {
   var routes = {
-    '/': new HomeRoute(),
-    '/login': new LoginRoute()
+    '/':         new HomeRoute(),
+    '/login':    new LoginRoute(),
+    '/register': new RegisterRoute()
   };
 
   function addRouteConfig(config, path, route) {
@@ -23,7 +25,20 @@ Application.prototype._createRouter = function() {
   }
 
   this.router = Router(routerConfig).configure({html5history: true});
+
+  var session = {user: null};
+
+  for (var path in routes) {
+    routes[path].router = this.router;
+    routes[path].session = session;
+  }
+
   this.router.init();
+};
+
+
+Application.prototype._initAuthentication = function() {
+  Parse.initialize("LDpUiYA3UhP8mklLOhKcxSX3eEd1u6iPynft0Rz0", "WQw5XOrpHcYfTvcWVZkGgHCHNF9bdnfB7LRNOFkd");
 };
 
 

@@ -15,6 +15,23 @@ LoginRoute.prototype.render = function() {
 
 
 LoginRoute.prototype.setEvents = function() {
+  var _this = this;
+  $('form').submit(function() {
+    var email = $("input[name='email']").val();
+    var password = $("input[name='password']").val();
+
+    Parse.User.logIn(email, password, {
+      success: function(user) {
+        _this.session.user = user;
+        _this.router.setRoute('/');
+      },
+      error: function(user, error) {
+        alert("Error: " + error.code + " " + error.message);
+      }
+    });
+
+    return false;
+  });
 };
 
 
