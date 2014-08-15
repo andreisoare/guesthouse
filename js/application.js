@@ -11,7 +11,8 @@ Application.prototype._createRouter = function() {
   var routes = {
     '/':         new HomeRoute(),
     '/login':    new LoginRoute(),
-    '/register': new RegisterRoute()
+    '/register': new RegisterRoute(),
+    '/logout':   new LogoutRoute()
   };
 
   function addRouteConfig(config, path, route) {
@@ -39,6 +40,7 @@ Application.prototype._createRouter = function() {
 
 Application.prototype._initParse = function() {
   Parse.initialize("LDpUiYA3UhP8mklLOhKcxSX3eEd1u6iPynft0Rz0", "WQw5XOrpHcYfTvcWVZkGgHCHNF9bdnfB7LRNOFkd");
+  this.session.user = Parse.User.current();
 };
 
 

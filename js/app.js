@@ -7,6 +7,7 @@ require('js/slideshow');
 require('build/templates');
 require('js/routes/home');
 require('js/routes/login');
+require('js/routes/logout');
 require('js/routes/register');
 require('js/application');
 

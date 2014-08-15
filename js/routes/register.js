@@ -1,5 +1,4 @@
-var RegisterRoute = window.RegisterRoute = function(router) {
-  this.router = router;
+var RegisterRoute = window.RegisterRoute = function() {
 };
 
 
