@@ -12,6 +12,5 @@ This README outlines the details of deploying an Airbnb clone.
 
 ## Running
 
-* If you use Windows, [install Python](https://www.python.org/download/windows/)
-* `python server.py`
-* Visit your app at `http://localhost:8000`
+* `node server.js`
+* Visit your app at `http://localhost:3000`
