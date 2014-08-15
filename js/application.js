@@ -1,7 +1,9 @@
 var Application = window.Application = function() {
-  this._createRouter();
+  this.session = {user: null};
+  this.router = this._createRouter();
   this._initializePushState();
-  this._initAuthentication();
+  this._initParse();
+  this.router.init();
 };
 
 
@@ -24,20 +26,18 @@ Application.prototype._createRouter = function() {
     addRouteConfig(routerConfig, path, routes[path]);
   }
 
-  this.router = Router(routerConfig).configure({html5history: true});
-
-  var session = {user: null};
+  router = Router(routerConfig).configure({html5history: true});
 
   for (var path in routes) {
-    routes[path].router = this.router;
-    routes[path].session = session;
+    routes[path].router = router;
+    routes[path].session = this.session;
   }
 
-  this.router.init();
+  return router;
 };
 
 
-Application.prototype._initAuthentication = function() {
+Application.prototype._initParse = function() {
   Parse.initialize("LDpUiYA3UhP8mklLOhKcxSX3eEd1u6iPynft0Rz0", "WQw5XOrpHcYfTvcWVZkGgHCHNF9bdnfB7LRNOFkd");
 };
 
