@@ -8,7 +8,7 @@ This README outlines the details of deploying an Airbnb clone.
 * [Install Node.js](http://nodejs.org/download/)
 * `npm install -g grunt-cli`
 * `npm install`
-* `grunt`
+* `grunt` OR `grunt --target=dev`
 
 ## Running
 
