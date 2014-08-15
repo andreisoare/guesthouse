@@ -9,5 +9,5 @@ require('js/routes/login');
 require('js/application');
 
 $(function() {
-	window.App = new Application();
+  window.App = new Application();
 });

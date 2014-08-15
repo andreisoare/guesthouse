@@ -1,13 +1,17 @@
 var express = require('express');
 var fs = require('fs');
 
+var rootPath = process.argv[2] || '.';
+var defaultPath = rootPath + '/index.html';
+
 var app = express();
 
 app.get(/^(.*)$/, function(req, res){
-  var path = '.' + req.params[0];
+  var path = rootPath + req.params[0];
   fs.stat(path, function(err, stat) {
     if (err || !stat.isFile()) {
-      path = './index.html';
+      console.log('File not found: ' + path);
+      path = defaultPath;
     }
     console.log('Serving', path);
     res.sendfile(path);
