@@ -31,6 +31,7 @@ RegisterRoute.prototype.setEvents = function() {
       success: function(user) {
         _this.session.user = user;
         _this.router.setRoute('/');
+        App.loadHeader();
       },
       error: function(user, error) {
         alert("Error: " + error.code + " " + error.message);

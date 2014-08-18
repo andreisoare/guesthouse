@@ -3,6 +3,7 @@ var Application = window.Application = function() {
   this.router = this._createRouter();
   this._initializePushState();
   this._initParse();
+  this.loadHeader();
   this.router.init();
 };
 
@@ -42,6 +43,12 @@ Application.prototype._initParse = function() {
   Parse.initialize("LDpUiYA3UhP8mklLOhKcxSX3eEd1u6iPynft0Rz0", "WQw5XOrpHcYfTvcWVZkGgHCHNF9bdnfB7LRNOFkd");
   this.session.user = Parse.User.current();
 };
+
+
+Application.prototype.loadHeader = function() {
+  var htmlTemplate = Templates['templates/header.hbs'](this.session);
+  $('#header-outlet').html(htmlTemplate);
+}
 
 
 /* Configures links to avoids loading index.html from the server every time you

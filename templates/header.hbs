@@ -1,0 +1,18 @@
+<div class="app-header section-wrapper">
+  <a href="/">
+    <img src="/build/img/logo.png" class="logo">
+  </a>
+  <div class="controllers">
+    {{#if user}}
+      <img src="/build/img/avatar.png"/>
+      {{user.name}}
+      <a href="/logout">LOG OUT</a>
+    {{else}}
+      <a href="/login">LOG IN</a>
+      <a href="/register">SIGN UP</a>
+    {{/if}}
+    <a href="/list"><div class="yellow-btn">List your space</div></a>
+  </div>
+</div>
+
+<div id="base-outlet"></div>
