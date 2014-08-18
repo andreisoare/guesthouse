@@ -46,7 +46,9 @@ Application.prototype._initParse = function() {
 
 
 Application.prototype.loadHeader = function() {
-  var htmlTemplate = Templates['templates/header.hbs'](this.session);
+  var htmlTemplate = Templates['templates/header.hbs']({
+    user: this.session.user ? this.session.user.get('name') : null
+  });
   $('#header-outlet').html(htmlTemplate);
 }
 
